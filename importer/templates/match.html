@@ -103,6 +103,12 @@
                         <input class="input" type="text" id="author" placeholder="Author">
                     </div>
                 </div>
+		<div class="field">
+		    <label class="label">Narrator</label>
+		    <div class="control">
+		        <input class="input" type="text" id="narrator" placeholder="narrator">
+		    </div>
+		</div>
                 <div class="field">
                     <label class="label">Keywords</label>
                     <div class="control">
@@ -117,7 +123,7 @@
             </div>
             <div style="padding-left: 10px;">
                 <button class="button is-link"
-                    onclick="searchAsin(document.getElementById('title').value, document.getElementById('author').value, document.getElementById('keywords').value)">Search</button>
+                    onclick="searchAsin(document.getElementById('title').value, document.getElementById('author').value, document.getElementById('keywords').value, document.getElementById('narrator').value)">Search</button>
                 <button class="button" onclick="closeSearchPanel()">Cancel</button>
             </div>
         </footer>

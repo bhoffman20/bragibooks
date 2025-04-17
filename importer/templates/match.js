@@ -12,6 +12,7 @@ function closeSearchPanel() {
     // Clear the input fields
     modal.querySelector('#title').value = '';
     modal.querySelector('#author').value = '';
+    modal.querySelector('#narrator').value = '';
     modal.querySelector('#keywords').value = '';
 
     // Clear the search notification
@@ -148,7 +149,7 @@ function checkAllSelectsHaveValue() {
     }
 }
 
-async function searchAsin(title, author, keywords) {
+async function searchAsin(title, author, keywords, narrator) {
     const modal = document.getElementById('custom-search-modal');
     const select = document.getElementById(modal.dataset.value);
 
@@ -165,6 +166,22 @@ async function searchAsin(title, author, keywords) {
         document.getElementById('search-notification').style.display = "block";
         return;
     }
+
+    if(!narrator) {
+	narrator = "Unknown";
+    }
+
+    let customObject = {
+      asin: "NO_ASIN",
+      author: author,
+      title: title,
+      narrator: narrator,
+      date: "1970-01-01",
+      image_link: [ "/static/images/cover_not_available.jpg" ],
+      region: "us",
+      score: 0
+    }
+    data.push(customObject);
 
     // Update the select for the calling custom search
     updateOptions(select, data)
