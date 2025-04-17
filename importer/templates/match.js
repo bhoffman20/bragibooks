@@ -172,7 +172,7 @@ async function searchAsin(title, author, keywords, narrator) {
     }
 
     let customObject = {
-      asin: "NO_ASIN",
+      asin: "__NOASIN__",
       author: author,
       title: title,
       narrator: narrator,
